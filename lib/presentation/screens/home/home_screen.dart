@@ -10,25 +10,26 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flutter + material 3'),
       ),
-      body: const _HomeView(),
+      body: const _HomeView(), 
     );
   }
 }
-
+//widget para el menu
+// Vista principal que muestra la lista de elementos del menú
 class _HomeView extends StatelessWidget {
   const _HomeView();
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: appMenuItems.length,
+        itemCount: appMenuItems.length, // Número de elementos en el menú
         itemBuilder: (contex, index) {
-          final menuIthem = appMenuItems[index];
-          return _CustomListTitle(menuIthem: menuIthem);
+          final menuIthem = appMenuItems[index];// se obtiene el item
+          return _CustomListTitle(menuIthem: menuIthem);//se crea la tarjeta
         });
   }
 }
-
+// Widget personalizado para cada elemento del menú
 class _CustomListTitle extends StatelessWidget {
   const _CustomListTitle({
     required this.menuIthem,
@@ -38,15 +39,20 @@ class _CustomListTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme; 
+    final colors = Theme.of(context).colorScheme;
 
     return ListTile(
-      leading: Icon(menuIthem.icon, color:colors.primary ),
+      leading: Icon(menuIthem.icon, color: colors.primary), //icono
       trailing: Icon(Icons.arrow_forward_ios_outlined, color: colors.primary),
       title: Text(menuIthem.title),
       subtitle: Text(menuIthem.subTitle),
-      onTap: (){
-        //TODO : NAVEGAR A OTRAS PANTAS
+      onTap: () {
+        //   Navigator.of(context).push(
+        //     MaterialPageRoute(builder: (context) => ButtonsScreen()),
+        //  );
+
+ // Navega a la pantalla correspondiente usando el nombre de ruta
+        Navigator.pushNamed(context,menuIthem.link); 
       },
     );
   }

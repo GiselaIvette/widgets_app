@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// Definición de la clase MenuIthem para representar cada opción del menú
 class MenuIthem {
   final String title;
   final String subTitle;
@@ -26,9 +26,11 @@ MenuIthem(
   MenuIthem(
   title: 'Tarjetas', 
   subTitle: 'Un contenedor estilizado', 
-  link: '/card',
+  link: '/cards',
   icon: Icons.credit_card
   ),
+
+
 
 ];
 
