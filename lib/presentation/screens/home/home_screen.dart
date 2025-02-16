@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_ithem.dart';
+import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const String name = 'home_string';
   const HomeScreen({super.key});
 
   @override
@@ -56,6 +58,7 @@ class _CustomListTitle extends StatelessWidget {
 
         // Navega a la pantalla correspondiente usando el nombre de ruta
         //Navigator.pushNamed(context,menuIthem.link);
+        //context.push(CardsScreen.name);
         context.push(menuIthem.link);
       },
     );
