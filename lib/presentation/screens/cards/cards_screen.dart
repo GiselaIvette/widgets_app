@@ -224,16 +224,16 @@ class _CardsType4 extends StatelessWidget {
           Image.network(
             'https://picsum.photos/id/${elevation.toInt()}/600/350',
             height: 350,
-            fit:  BoxFit.cover ,
+            fit: BoxFit.cover,
           ),
           // Ícono de opciones en la esquina superior derecha.
           Align(
             alignment: Alignment.topRight,
             child: Container(
-              decoration:  const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20))
-              ),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(20))),
               child: IconButton(
                 onPressed: () {}, // Botón sin funcionalidad aún.
                 icon: const Icon(Icons.more_vert_outlined),
