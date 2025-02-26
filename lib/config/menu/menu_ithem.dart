@@ -38,6 +38,14 @@ MenuIthem(
   ),
 
 
+  MenuIthem(
+  title: 'Snackbar y dialogos ', 
+  subTitle: 'indicadores de pantalla ', 
+  link: '/snackbars',
+  icon: Icons.info_outline
+  ),
+
+
 
 ];
 

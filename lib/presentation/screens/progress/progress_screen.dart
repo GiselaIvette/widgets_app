@@ -55,8 +55,8 @@ class  _ControlledProgressIndicator  extends StatelessWidget {
     return StreamBuilder(
       stream: Stream.periodic(const Duration(milliseconds: 300), (value){
         return (value*2) /100; // Convierte el valor a un rango de 0.0 a 1.0
-      }).takeWhile((value)=> value<1.0), // Detiene la emisión cuando el valor alcanza 100
-
+      }).takeWhile((value)=> value<1.0), 
+      
       builder: (context, snapshot) {
         //snapshot es el valor que tiene el stream
         final progressValue = snapshot.data ?? 0; // Si no hay datos, usa 0 como valor predeterminado
