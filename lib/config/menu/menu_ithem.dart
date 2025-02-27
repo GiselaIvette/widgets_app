@@ -45,6 +45,14 @@ MenuIthem(
   icon: Icons.info_outline
   ),
 
+  MenuIthem(
+  title: 'Animate Container  ', 
+  subTitle: 'Stateful Widgets animado', 
+  link: '/animate',
+  icon: Icons.check_box_outline_blank_rounded
+  ),
+
+
 
 
 ];
