@@ -20,7 +20,7 @@ class SnackbarScreen extends StatelessWidget {
     ScaffoldMessenger.of(context).showSnackBar(snackBack);
   }
 
- // Función para mostrar un cuadro de diálogo de confirmación
+ // metodo para mostrar un cuadro de diálogo de confirmación
 void openDialog (BuildContext context ){
   showDialog(
     context: context, 
@@ -47,12 +47,21 @@ void openDialog (BuildContext context ){
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            //boton para mostrar licencias 
             FilledButton.tonal(
-                onPressed: () => openDialog(context), 
+                onPressed: (){
+                  //esto nos permite opbservar 
+                  showAboutDialog(
+                    context: context,
+                    children: [
+                      const Text('Mollit labore officia enim enim nisi cupidatat culpa aliquip.')
+                    ]); 
+                } , 
                 child: Text('Licecncias Usadas ')),
                 const SizedBox(height: 20,), 
+                // boton para mostrar un dialogo 
             FilledButton.tonal(
-              onPressed: () {}, 
+              onPressed: () => openDialog(context), 
               child: Text('Mostrar dialogo'))
           ],
         ),
