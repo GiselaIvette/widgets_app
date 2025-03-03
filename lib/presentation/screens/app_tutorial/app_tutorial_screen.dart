@@ -2,6 +2,8 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+
+//Clase que representa la información de cada slide en el tutorial
 class SlideInfo {
   final String title;
   final String caption;
@@ -9,7 +11,7 @@ class SlideInfo {
 
   SlideInfo(this.title, this.caption, this.imageUrl);
 }
-
+//lista de slides con su info
 final slides = <SlideInfo>[
   SlideInfo(
       'Buscar comida',
@@ -25,8 +27,10 @@ final slides = <SlideInfo>[
       'assets/images/3.png'),
 ];
 
+
+
 class AppTutorialScreen extends StatefulWidget {
-  static const name = 'tutorial_screen';
+  static const name = 'tutorial_screen'; //npmbre de la ruta de navegacion
   const AppTutorialScreen({super.key});
 
   @override
@@ -35,19 +39,21 @@ class AppTutorialScreen extends StatefulWidget {
 
 class _AppTutorialScreenState extends State<AppTutorialScreen> {
   final PageController pageViewControler =
-      PageController(); //para ver el avance del pageview
-  bool endReached = false;
+      PageController(); // controler para ver el avance del pageview
+  bool endReached = false;//indicador del final de la pagina 
+
+
 //el init estate es pare de ciclo de vida de  los statefulwidgets
   @override
   void initState() {
     super.initState();
-
+ // Listener para detectar cuando se llega al final del tutorial
     pageViewControler.addListener(() {
       final page = pageViewControler.page ?? 0;
 
       if (!endReached&&page>= (slides.length-1.5)){
         setState(() {
-          endReached= true; 
+          endReached= true;// Se activa cuando se está cerca del último slide
         });
       }
 
@@ -72,7 +78,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
         children: [
           PageView(
             controller: pageViewControler,
-            physics: const BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),//Efecto rebote al deslizar
             //es un iterable
             children: slides
                 .map((slideData) => _Slide(
@@ -81,6 +87,8 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
                     imageUrl: slideData.imageUrl))
                 .toList(),
           ),
+
+          //boton para salir del tutorial
           Positioned(
             right: 20,
             top: 50,
@@ -90,6 +98,8 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
               icon: Icon(Icons.arrow_back),
             ),
           ),
+
+          // Botón "Comenzar" que aparece cuando se llega al final del tutorial
           endReached ? Positioned(
                   bottom: 50,
                   right: 30,
@@ -101,7 +111,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
                       child: const Text('Comenzar'),
                     ),
                   ))
-              : SizedBox()
+              : SizedBox()  // No muestra nada si no se ha llegado al final
         ],
       ),
     );
@@ -109,6 +119,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
 }
 
 //recibe la info del slide
+// Widget para representar cada slide individualmente
 class _Slide extends StatelessWidget {
   final String title;
   final String caption;
@@ -120,14 +131,15 @@ class _Slide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //
-    final titleStyle = Theme.of(context).textTheme.titleLarge;
-    final captionStyle = Theme.of(context).textTheme.bodySmall;
+    final titleStyle = Theme.of(context).textTheme.titleLarge; //Obtiene el estilo de texto para títulos grandes.
+    final captionStyle = Theme.of(context).textTheme.bodySmall; //Obtiene el estilo de texto para textos secundarios o descripciones.
+
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,//centra el contenido
+            crossAxisAlignment: CrossAxisAlignment.start,//alinea el texto a la izquierda
             children: [
               //aqui se muestra la imagen
               Image(image: AssetImage(imageUrl)),
