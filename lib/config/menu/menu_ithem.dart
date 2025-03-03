@@ -59,6 +59,21 @@ MenuIthem(
   icon: Icons.car_rental_outlined
   ),
 
+  MenuIthem(
+  title: 'UI controls + Tiles', 
+  subTitle: 'Una serie de controles de Flutter', 
+  link: '/ui-controls',
+  icon: Icons.car_rental_outlined
+  ),
+
+
+  MenuIthem(
+  title: 'Introduccion a la aplicacion', 
+  subTitle: 'tutorial para usar la aplicacion', 
+  link: '/tutorial',
+  icon: Icons.accessible_rounded
+  ),
+
 
 ];
 
