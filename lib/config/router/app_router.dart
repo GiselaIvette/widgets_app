@@ -25,4 +25,45 @@ final appRouter = GoRouter(routes: [
     name: CardsScreen.name, 
     builder: (context, state) => CardsScreen(),
   ),
+
+  
+  GoRoute(
+    //pantalla para progressindivcators
+    path: '/progress',
+    name: ProgressScreen.name,  
+    builder: (context, state) => ProgressScreen(),
+  ),
+
+    GoRoute(
+    //pantalla para snack  
+    path: '/snackbars',
+    name: SnackbarScreen.name,  
+    builder: (context, state) => SnackbarScreen(),
+  ),
+
+    GoRoute(
+    //pantalla para snack  
+    path: '/animate',
+    name: AnimatedScreen.name,  
+    builder: (context, state) => AnimatedScreen(),
+  ),
+
+//checkbox y expansion tile
+  GoRoute(
+    path: '/ui-controls',
+    name: UiControlsScreen.name,
+    builder: (context, state) => UiControlsScreen(),
+    ),
+
+    GoRoute(
+    path: '/tutorial',
+    name: AppTutorialScreen.name,
+    builder: (context, state) =>AppTutorialScreen(),
+    ),
+
+      GoRoute(
+    path: '/infinite',
+    name: InfiniteScrollScreen.name,
+    builder: (context, state) =>InfiniteScrollScreen(),
+    ),
 ]);

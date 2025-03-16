@@ -30,7 +30,57 @@ MenuIthem(
   icon: Icons.credit_card
   ),
 
+  MenuIthem(
+  title: 'ProgressIndicators', 
+  subTitle: 'Generales y controlados ', 
+  link: '/progress',
+  icon: Icons.refresh_rounded
+  ),
 
+
+  MenuIthem(
+  title: 'Snackbar y dialogos ', 
+  subTitle: 'indicadores de pantalla ', 
+  link: '/snackbars',
+  icon: Icons.info_outline
+  ),
+
+  MenuIthem(
+  title: 'Animate Container  ', 
+  subTitle: 'Stateful Widgets animado', 
+  link: '/animate',
+  icon: Icons.check_box_outline_blank_rounded
+  ),
+
+  MenuIthem(
+  title: 'UI controls + Tiles', 
+  subTitle: 'Una serie de controles de Flutter', 
+  link: '/ui-controls',
+  icon: Icons.car_rental_outlined
+  ),
+
+  MenuIthem(
+  title: 'UI controls + Tiles', 
+  subTitle: 'Una serie de controles de Flutter', 
+  link: '/ui-controls',
+  icon: Icons.car_rental_outlined
+  ),
+
+
+  MenuIthem(
+  title: 'Introduccion a la aplicacion', 
+  subTitle: 'tutorial para usar la aplicacion', 
+  link: '/tutorial',
+  icon: Icons.accessible_rounded
+  ),
+
+
+  MenuIthem(
+  title: 'Infinite scroll y pull ', 
+  subTitle: 'Listas infinitas y pull to refresh', 
+  link: '/infinite',
+  icon: Icons.list_alt_outlined
+  ),
 
 ];
 
