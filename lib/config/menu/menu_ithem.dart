@@ -75,6 +75,13 @@ MenuIthem(
   ),
 
 
+  MenuIthem(
+  title: 'Infinite scroll y pull ', 
+  subTitle: 'Listas infinitas y pull to refresh', 
+  link: '/infinite',
+  icon: Icons.list_alt_outlined
+  ),
+
 ];
 
 

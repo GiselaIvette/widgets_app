@@ -10,7 +10,7 @@ class UiControlsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('UI controls Screen'),
         centerTitle: true,
-        backgroundColor: Colors.purpleAccent,
+      //  backgroundColor: Colors.purpleAccent,
       ),
       body: const _UiControlsView(),
     );
