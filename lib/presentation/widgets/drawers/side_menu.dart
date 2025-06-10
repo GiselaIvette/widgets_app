@@ -4,7 +4,7 @@ import 'package:widgets_app/config/menu/menu_ithem.dart';
 
 class SideMenu extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
-  const SideMenu({super.key, required this.scaffoldKey});
+  const  SideMenu({super.key, required this.scaffoldKey});
 
   @override
   State<SideMenu> createState() => _SideMenuState();
