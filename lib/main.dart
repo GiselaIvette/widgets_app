@@ -4,7 +4,7 @@ import 'package:widgets_app/config/router/app_router.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
 
 void main() {
-  runApp(const ProviderScope(child: MainApp()));
+  runApp(const ProviderScope(child: MainApp())); //se agrega esto para poder utilizar riverpod 
 }
 //con providerScope, riverpod sabrra donde buscar cada uno de los providers(hablando de riverpod) que se vayan creando
 
