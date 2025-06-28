@@ -30,4 +30,12 @@ class AppTheme {
           isDarkMode ? Brightness.dark : Brightness.light, //tema de la app
       colorSchemeSeed: colorList[selectedColor],
       appBarTheme: const AppBarTheme(centerTitle: false));
+
+
+
+//Este método se llama copyWith porque crea una nueva copia de la clase AppTheme, permitiendo cambiar solo algunos valores.
+//Sirve para actualizar parcialmente una instancia sin modificar la original.
+  AppTheme copyWith({int? selectedColor, bool? isDarkMode}) => AppTheme(
+      selectedColor: selectedColor ?? this.selectedColor,
+      isDarkMode: isDarkMode ?? this.isDarkMode); //cpia intancia de la clase
 }

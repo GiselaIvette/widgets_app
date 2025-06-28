@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:widgets_app/config/theme/app_theme.dart';
 import 'package:widgets_app/presentation/providers/theme_provider.dart';
 
 class ThemeChangedScreen extends ConsumerWidget {
@@ -8,7 +9,10 @@ class ThemeChangedScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final isDarkMode = ref.watch(isDarkModeProvider);
+    // final isDarkMode = ref.watch(isDarkModeProvider);
+
+    final isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Theme Changer'),
@@ -18,7 +22,8 @@ class ThemeChangedScreen extends ConsumerWidget {
                 ? Icon(Icons.dark_mode_outlined)
                 : Icon(Icons.light_mode_outlined),
             onPressed: () {
-              ref.read(isDarkModeProvider.notifier).update((state) => !state);
+              // ref.read(isDarkModeProvider.notifier).update((state) => !state);
+              ref.read(themeNotifierProvider.notifier).toggleDarkMde();
             },
           )
         ],
@@ -34,7 +39,9 @@ class _ThemeChangerView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final List<Color> colors = ref.watch(colorsProvider);
-    final int selectColor = ref.watch(selectedColorProvider);
+    //final int selectColor = ref.watch(selectedColorProvider);
+    //final AppTheme appTheme = ref.watch(themeNotifierProvider);
+    final  int selectColor = ref.watch(themeNotifierProvider).selectedColor;
     return ListView.builder(
       itemCount: colors.length,
       itemBuilder: (context, index) {
@@ -47,9 +54,10 @@ class _ThemeChangerView extends ConsumerWidget {
           subtitle: Text('${color.value}'),
           activeColor: color, //valor hexadecimal del color
           value: index,
-          groupValue: selectColor,
+          groupValue: selectColor, 
           onChanged: (value) {
-            ref.read(selectedColorProvider.notifier).state = index;
+            // ref.read(selectedColorProvider.notifier).state = index;
+            ref.watch(themeNotifierProvider.notifier).changeColorIndex(index);
           },
         );
       },
